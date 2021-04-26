@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class InsightWeatherDataService {
-  private url = "https://api.nasa.gov/insight_weather/?api_key=" + environment.NASA_API_KEY + "&feedtype=json&ver=1.0"
+export class ApodService {
+  private url = "https://api.nasa.gov/planetary/apod?api_key=" + environment.NASA_API_KEY
 
   constructor(private http: HttpClient) { }
 
