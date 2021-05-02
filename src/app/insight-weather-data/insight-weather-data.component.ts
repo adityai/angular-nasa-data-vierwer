@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InsightWeatherDataService } from '../insight-weather-data.service';
 
 @Component({
   selector: 'app-insight-weather-data',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsightWeatherDataComponent implements OnInit {
 
-  constructor() { }
+  public weatherData: any;
+
+  constructor(private service: InsightWeatherDataService) { }
 
   ngOnInit(): void {
+    this.service.getAllWeatherReports().subscribe(data => {
+      this.weatherData = data;
+    });
   }
 
 }

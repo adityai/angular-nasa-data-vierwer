@@ -1,1 +1,6 @@
 <h1>Insight Weather Data</h1>
+<div *ngIf="weatherData">
+    <pre>
+        {{ weatherData | json }}
+    </pre>
+</div>
