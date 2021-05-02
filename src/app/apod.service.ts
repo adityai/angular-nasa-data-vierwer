@@ -12,6 +12,7 @@ export class ApodService {
   constructor(private http: HttpClient) { }
 
   getAllWeatherReports(): Observable<any> {
+    console.log(this.http.get<any>(this.url));
     return this.http.get<any>(this.url);
   }
 }

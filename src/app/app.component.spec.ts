@@ -30,6 +30,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
+    console.log("TESTING: " + compiled.querySelector('.content span').textContent);
     expect(compiled.querySelector('.content span').textContent).toContain('nasa-data-viewer app is running!');
   });
 });

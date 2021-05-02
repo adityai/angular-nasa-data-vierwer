@@ -8,9 +8,9 @@ describe('ApodComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ApodComponent ]
+      declarations: [ApodComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +21,11 @@ describe('ApodComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display "Astrononmy Picture of the Day" as the heading', () => {
+    const compiled = fixture.nativeElement;
+
+    expect(compiled.querySelector("body > app-root > app-apod > h1")).toContain("Astronomy Picture of the Day");
   });
 });
