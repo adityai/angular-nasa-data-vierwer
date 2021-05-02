@@ -26,10 +26,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('nasa-data-viewer');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('nasa-data-viewer app is running!');
-  });
+  // Test is no longer valid as html has been completely replaced with <app-insight-weather-data> component
+  // it('should render title', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.nativeElement;
+  //   expect(compiled.querySelector('.content span').textContent).toContain('nasa-data-viewer app is running!');
+  // });
 });
