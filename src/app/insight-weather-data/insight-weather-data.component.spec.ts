@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { InsightWeatherDataService } from '../insight-weather-data.service';
 
 import { InsightWeatherDataComponent } from './insight-weather-data.component';
 
@@ -14,6 +16,11 @@ describe('InsightWeatherDataComponent', () => {
   });
 
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+      providers: [InsightWeatherDataService]
+    });
+
     fixture = TestBed.createComponent(InsightWeatherDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
