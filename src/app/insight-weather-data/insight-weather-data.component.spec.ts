@@ -7,12 +7,15 @@ import { InsightWeatherDataComponent } from './insight-weather-data.component';
 describe('InsightWeatherDataComponent', () => {
   let component: InsightWeatherDataComponent;
   let fixture: ComponentFixture<InsightWeatherDataComponent>;
+  let mockInsightWeatherDataService;
+
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [InsightWeatherDataComponent]
     })
       .compileComponents();
+    mockInsightWeatherDataService = jasmine.createSpy('InsightWeatherDataService').and.returnValue('{input: "test"}');
   });
 
   beforeEach(() => {
@@ -21,9 +24,10 @@ describe('InsightWeatherDataComponent', () => {
       providers: [InsightWeatherDataService]
     });
 
-    fixture = TestBed.createComponent(InsightWeatherDataComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    mockInsightWeatherDataService = jasmine.createSpyObj(['getAllWeatherData']);
+
+    component = new InsightWeatherDataComponent(mockInsightWeatherDataService);
+
   });
 
   it('should create', () => {
@@ -31,8 +35,11 @@ describe('InsightWeatherDataComponent', () => {
   });
 
   it('should render title', () => {
+    fixture = TestBed.createComponent(InsightWeatherDataComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Insight Weather Data');
   });
 });
+
