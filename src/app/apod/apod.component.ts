@@ -12,6 +12,7 @@ export class ApodComponent implements OnInit {
   public apodTitle: any;
   public apodExplanation: any;
   public apodHdImageUrl: any;
+  public apodDate: any;
 
   constructor(private service: ApodService) { }
 
@@ -23,6 +24,7 @@ export class ApodComponent implements OnInit {
       this.apodTitle = jsonObject.title;
       this.apodExplanation = jsonObject.explanation;
       this.apodHdImageUrl = jsonObject.hdurl;
+      this.apodDate = jsonObject.date;
     })
   }
 
