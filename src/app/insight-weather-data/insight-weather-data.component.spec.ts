@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { EMPTY, of } from 'rxjs';
 import { InsightWeatherDataService } from '../insight-weather-data.service';
 
 import { InsightWeatherDataComponent } from './insight-weather-data.component';
@@ -7,15 +8,13 @@ import { InsightWeatherDataComponent } from './insight-weather-data.component';
 describe('InsightWeatherDataComponent', () => {
   let component: InsightWeatherDataComponent;
   let fixture: ComponentFixture<InsightWeatherDataComponent>;
-  let mockInsightWeatherDataService;
-
+  let mockInsightWeatherDataService: any;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [InsightWeatherDataComponent]
     })
       .compileComponents();
-    mockInsightWeatherDataService = jasmine.createSpy('InsightWeatherDataService').and.returnValue('{input: "test"}');
   });
 
   beforeEach(() => {
@@ -24,10 +23,19 @@ describe('InsightWeatherDataComponent', () => {
       providers: [InsightWeatherDataService]
     });
 
-    mockInsightWeatherDataService = jasmine.createSpyObj(['getAllWeatherData']);
+    mockInsightWeatherDataService = jasmine.createSpyObj(InsightWeatherDataService, ['getAllWeatherReports']);
 
     component = new InsightWeatherDataComponent(mockInsightWeatherDataService);
 
+  });
+
+  describe('getAllWeatherData', () => {
+    it('should return weather data', () => {
+      mockInsightWeatherDataService.getAllWeatherReports.and.returnValue(of("{input: output}"));
+      component.ngOnInit();
+
+      expect(component.weatherData.length).toBe(15);
+    });
   });
 
   it('should create', () => {
