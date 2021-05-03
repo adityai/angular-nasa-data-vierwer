@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { empty, of } from 'rxjs';
+import { of } from 'rxjs';
 
 import { InsightWeatherDataService } from './insight-weather-data.service';
 
@@ -10,26 +10,24 @@ describe('InsightWeatherDataService', () => {
 
   beforeEach(() => {
 
-    const spy = jasmine.createSpyObj(InsightWeatherDataService, ['getAllWeatherReports']);
+    mockInsightWeatherDataService = jasmine.createSpyObj(InsightWeatherDataService, ['getAllWeatherReports']);
 
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
       providers: [
         InsightWeatherDataService,
-        { provide: InsightWeatherDataService, useValue: spy }
+        { provide: InsightWeatherDataService, useValue: mockInsightWeatherDataService }
       ]
     });
-    // Inject both the service-to-test and its (spy) dependency
     insightWeatherDataService = TestBed.inject(InsightWeatherDataService);
-    mockInsightWeatherDataService = TestBed.inject(InsightWeatherDataService) as jasmine.SpyObj<InsightWeatherDataService>;
   });
 
   it('should be created', () => {
     expect(insightWeatherDataService).toBeTruthy();
   });
 
-  it('should return weather data as json', () => {
+  it('should return all weather data', () => {
     mockInsightWeatherDataService.getAllWeatherReports.and.returnValue(of("{input: output}"));
-    expect(mockInsightWeatherDataService.getAllWeatherReports());
+    expect(mockInsightWeatherDataService.getAllWeatherReports()).toBeTruthy();
   });
 });
