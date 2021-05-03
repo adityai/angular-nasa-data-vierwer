@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { InsightWeatherDataComponent } from './insight-weather-data/insight-weather-data.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InsightWeatherDataService } from './insight-weather-data.service';
+import { ApodComponent } from './apod/apod.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InsightWeatherDataComponent
+    InsightWeatherDataComponent,
+    ApodComponent
   ],
   imports: [
     BrowserModule,
