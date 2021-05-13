@@ -8,14 +8,16 @@ import { CuriositySolService } from '../curiosity-sol.service';
 })
 export class CuriositySolComponent implements OnInit {
 
-  public curiositySol: any;
+  public curiositySolData: any;
+  public sol: any;
 
   constructor(private service: CuriositySolService) { }
 
   ngOnInit(): void {
     this.service.getLatestMissionUpdateData().subscribe(data => {
-      this.curiositySol = data;
+      let jsonObject = JSON.parse(JSON.stringify(data));
+      this.sol = jsonObject.rover.max_sol;
     });
-  }
 
+  }
 }
