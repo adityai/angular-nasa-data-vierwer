@@ -9,12 +9,15 @@ import { MarsRoverPhotosService } from '../mars-rover-photos.service';
 export class MarsRoverPhotosComponent implements OnInit {
 
   public curiosityData: any;
+  public curiosityImageUrl: any;
 
   constructor(private service: MarsRoverPhotosService) { }
 
   ngOnInit(): void {
     this.service.getCuriosityPhotoSol1000().subscribe(data => {
       this.curiosityData = data;
+      let jsonObject = JSON.parse(JSON.stringify(this.curiosityData));
+      this.curiosityImageUrl = jsonObject.photos[0].img_src;
     });
   }
 

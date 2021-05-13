@@ -1,6 +1,6 @@
 <p>Mars Rover Photos</p>
 <div *ngIf="curiosityData">
     <pre>
-        {{ curiosityData | json }}
+        <p><a href="{{ curiosityImageUrl }}"><img src="{{ curiosityImageUrl }}" /></a></p>
     </pre>
 </div>
