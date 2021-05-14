@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CuriositySolComponent } from './curiosity-sol.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('CuriositySolComponent', () => {
   let component: CuriositySolComponent;
@@ -10,13 +9,18 @@ describe('CuriositySolComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
-        HttpClientTestingModule
+        HttpClientModule
       ],
       declarations: [
         CuriositySolComponent
       ],
     }).compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CuriositySolComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {

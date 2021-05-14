@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MarsRoverPhotosComponent } from './mars-rover-photos.component';
@@ -7,10 +8,14 @@ describe('MarsRoverPhotosComponent', () => {
   let fixture: ComponentFixture<MarsRoverPhotosComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MarsRoverPhotosComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule
+      ],
+      declarations: [
+        MarsRoverPhotosComponent
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
