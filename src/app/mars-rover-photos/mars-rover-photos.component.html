@@ -1,0 +1,6 @@
+<h2>Mars Rover Photos for sol: {{ curiositySol }}</h2>
+<div *ngIf="curiosityImageUrl">
+    <pre>
+        <p><a href="{{ curiosityImageUrl }}"><img src="{{ curiosityImageUrl }}" /></a></p>
+    </pre>
+</div>
