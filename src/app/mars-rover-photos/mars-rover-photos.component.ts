@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CuriositySolService } from '../curiosity-sol.service';
 import { MarsRoverPhotosService } from '../mars-rover-photos.service';
 
@@ -15,11 +15,21 @@ export class MarsRoverPhotosComponent implements OnInit {
 
   constructor(private service: MarsRoverPhotosService, private solService: CuriositySolService) { }
 
+  @Input()
+  inputCuriositySol: any;
+
   ngOnInit(): void {
     this.solService.getLatestMissionUpdateData().subscribe(data => {
       let jsonObject = JSON.parse(JSON.stringify(data));
-      // this.curiositySol = jsonObject.rover.max_sol;
-      this.curiositySol = Math.floor((Math.random() * jsonObject.rover.max_sol) + 1);
+      if (this.inputCuriositySol) {
+        this.curiositySol = this.inputCuriositySol
+      }
+      else {
+        this.curiositySol = jsonObject.rover.max_sol;
+      }
+      // if (this.inputCuriositySol == "random") {
+      //   this.curiositySol = Math.floor((Math.random() * jsonObject.rover.max_sol));
+      // }
 
       console.log("SOL: " + this.curiositySol);
       this.service.getCuriosityPhotoForSol(this.curiositySol).subscribe(data => {
