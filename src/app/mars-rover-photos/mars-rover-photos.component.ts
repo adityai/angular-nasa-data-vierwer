@@ -18,18 +18,22 @@ export class MarsRoverPhotosComponent implements OnInit {
   @Input()
   inputCuriositySol: any;
 
+  @Input()
+  random!: boolean;
+
   ngOnInit(): void {
     this.solService.getLatestMissionUpdateData().subscribe(data => {
       let jsonObject = JSON.parse(JSON.stringify(data));
-      if (this.inputCuriositySol) {
-        this.curiositySol = this.inputCuriositySol
+      if (this.random == true) {
+        this.curiositySol = Math.floor((Math.random() * jsonObject.rover.max_sol));
+      } else {
+        if (this.inputCuriositySol) {
+          this.curiositySol = this.inputCuriositySol
+        }
+        else {
+          this.curiositySol = jsonObject.rover.max_sol;
+        }
       }
-      else {
-        this.curiositySol = jsonObject.rover.max_sol;
-      }
-      // if (this.inputCuriositySol == "random") {
-      //   this.curiositySol = Math.floor((Math.random() * jsonObject.rover.max_sol));
-      // }
 
       console.log("SOL: " + this.curiositySol);
       this.service.getCuriosityPhotoForSol(this.curiositySol).subscribe(data => {

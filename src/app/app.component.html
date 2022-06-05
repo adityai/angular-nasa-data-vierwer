@@ -2,12 +2,16 @@
     <app-curiosity-sol></app-curiosity-sol>
 </div>
 <div>
-    <p>Latest</p>
+    <h2>Latest</h2>
     <app-mars-rover-photos></app-mars-rover-photos>
 </div>
 <div>
-    <p>Day 1</p>
+    <h2>Day 1</h2>
     <app-mars-rover-photos [inputCuriositySol]="1"></app-mars-rover-photos>
+</div>
+<div>
+    <h2>Random</h2>
+    <app-mars-rover-photos [random]=true></app-mars-rover-photos>
 </div>
 <div>
     <app-apod></app-apod>
