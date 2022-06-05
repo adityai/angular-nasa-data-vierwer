@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CuriositySolService } from '../curiosity-sol.service';
 import { MarsRoverPhotosService } from '../mars-rover-photos.service';
 
@@ -15,10 +15,25 @@ export class MarsRoverPhotosComponent implements OnInit {
 
   constructor(private service: MarsRoverPhotosService, private solService: CuriositySolService) { }
 
+  @Input()
+  inputCuriositySol: any;
+
+  @Input()
+  random!: boolean;
+
   ngOnInit(): void {
     this.solService.getLatestMissionUpdateData().subscribe(data => {
       let jsonObject = JSON.parse(JSON.stringify(data));
-      this.curiositySol = jsonObject.rover.max_sol;
+      if (this.random == true) {
+        this.curiositySol = Math.floor((Math.random() * jsonObject.rover.max_sol));
+      } else {
+        if (this.inputCuriositySol) {
+          this.curiositySol = this.inputCuriositySol
+        }
+        else {
+          this.curiositySol = jsonObject.rover.max_sol;
+        }
+      }
 
       console.log("SOL: " + this.curiositySol);
       this.service.getCuriosityPhotoForSol(this.curiositySol).subscribe(data => {
@@ -26,6 +41,11 @@ export class MarsRoverPhotosComponent implements OnInit {
         let jsonObject = JSON.parse(JSON.stringify(this.curiosityData));
         this.curiosityImageUrl = jsonObject.photos[0].img_src;
       });
+      // this.service.getCuriosityPhotoSol1000().subscribe(data => {
+      //   this.curiosityData = data;
+      //   let jsonObject = JSON.parse(JSON.stringify(this.curiosityData));
+      //   this.curiosityImageUrl = jsonObject.photos[1].img_src;
+      // })
     });
 
   }
