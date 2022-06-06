@@ -1,8 +1,8 @@
-<h1>NASA: Astronomy Picture of the Day</h1>
+<h2>NASA: Astronomy Picture of the Day</h2>
 <div *ngIf="apodData">
     <p>Date: {{ apodDate }}</p>
     <p>Title: {{ apodTitle }}</p>
-    <p><a href="{{ apodHdImageUrl }}"><img src="{{ apodImageUrl }}" /></a></p>
+    <p><a href="{{ apodHdImageUrl }}"><img src="{{ apodImageUrl }}" width="300"/></a></p>
     <p>Explanation: {{ apodExplanation }}</p>
 
 </div>

@@ -1,18 +1,17 @@
 <div>
     <app-curiosity-sol></app-curiosity-sol>
 </div>
-<div>
-    <h2>Latest</h2>
+<table><tr><td>
     <app-mars-rover-photos></app-mars-rover-photos>
-</div>
-<div>
-    <h2>Day 1</h2>
-    <app-mars-rover-photos [inputCuriositySol]="1"></app-mars-rover-photos>
-</div>
-<div>
-    <h2>Random</h2>
+</td>
+<td>
+    <app-mars-rover-photos [inputCuriositySol]="2"></app-mars-rover-photos>
+</td>
+<td>
     <app-mars-rover-photos [random]=true></app-mars-rover-photos>
-</div>
+</td>
+</tr>
+</table>
 <div>
     <app-apod></app-apod>
 </div>
