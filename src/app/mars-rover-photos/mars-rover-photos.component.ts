@@ -12,6 +12,7 @@ export class MarsRoverPhotosComponent implements OnInit {
   public curiosityData: any;
   public curiosityImageUrl: any;
   public curiositySol: any;
+  public curiosityEarthDate: any;
 
   constructor(private service: MarsRoverPhotosService, private solService: CuriositySolService) { }
 
@@ -40,6 +41,7 @@ export class MarsRoverPhotosComponent implements OnInit {
         this.curiosityData = data;
         let jsonObject = JSON.parse(JSON.stringify(this.curiosityData));
         this.curiosityImageUrl = jsonObject.photos[0].img_src;
+        this.curiosityEarthDate = jsonObject.photos[0].earth_date;
       });
       // this.service.getCuriosityPhotoSol1000().subscribe(data => {
       //   this.curiosityData = data;
