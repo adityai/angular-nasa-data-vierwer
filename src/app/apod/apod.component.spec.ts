@@ -46,6 +46,6 @@ describe('ApodComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('NASA: Astronomy Picture of the Day');
+    expect(compiled.querySelector('h2').textContent).toContain('NASA: Astronomy Picture of the Day');
   });
 });
