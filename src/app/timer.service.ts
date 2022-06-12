@@ -8,8 +8,8 @@ export class TimerService {
 
   constructor() { }
 
-  getData(): string {
+  getData(): any {
     console.log("test");
-    return "test";
+    return Math.floor((Math.random() * 3000)).toString();
   }
 }

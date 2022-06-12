@@ -11,14 +11,14 @@ import { TimerService } from 'src/app/timer.service';
 })
 export class TimerComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
-  private statusText: any;
+  public statusText: any;
 
   constructor(private timerService: TimerService) {}
 
   ngOnInit(): void {
     this.subscription = timer(0, 10000).pipe(
       switchMap(() => this.timerService.getData())
-    ).subscribe(result => this.statusText = result);
+    ).subscribe(result => this.statusText = this.timerService.getData());
   }
 
   ngOnDestroy(): void {
