@@ -9,6 +9,7 @@ import { InsightWeatherDataService } from './insight-weather-data.service';
 import { ApodComponent } from './apod/apod.component';
 import { MarsRoverPhotosComponent } from './mars-rover-photos/mars-rover-photos.component';
 import { CuriositySolComponent } from './curiosity-sol/curiosity-sol.component';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CuriositySolComponent } from './curiosity-sol/curiosity-sol.component';
     InsightWeatherDataComponent,
     ApodComponent,
     MarsRoverPhotosComponent,
-    CuriositySolComponent
+    CuriositySolComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
