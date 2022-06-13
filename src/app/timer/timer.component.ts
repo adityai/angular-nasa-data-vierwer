@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { CuriousityRandomSolService as curiosityRandomSolService } from 'src/app/curiosity-random-sol.service';
+import { CuriosityRandomSolService } from 'src/app/curiosity-random-sol.service';
 import { MarsRoverPhotosService } from '../mars-rover-photos.service';
 
 @Component({
@@ -17,12 +17,12 @@ export class TimerComponent implements OnInit, OnDestroy {
   public curiosityEarthDate: any;
 
 
-  constructor(private timerService: curiosityRandomSolService, private marsRoverPhotoService: MarsRoverPhotosService) { }
+  constructor(private curiosityRandomSolService: CuriosityRandomSolService, private marsRoverPhotoService: MarsRoverPhotosService) { }
 
   ngOnInit(): void {
     this.subscription = timer(0, 10000).pipe(
-      switchMap(() => this.timerService.getData())
-    ).subscribe(result => this.randomSol = this.timerService.getData());
+      switchMap(() => this.curiosityRandomSolService.getData())
+    ).subscribe(result => this.randomSol = this.curiosityRandomSolService.getData());
     this.marsRoverPhotoService.getCuriosityPhotoForSol(this.randomSol).subscribe(data => {
       let jsonObject = JSON.parse(JSON.stringify(data));
       this.curiosityImageUrl = jsonObject.photos[0].img_src;
