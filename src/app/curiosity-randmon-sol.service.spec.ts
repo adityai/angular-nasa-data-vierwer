@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TimerService } from './timer.service';
+import { CuriousityRandomSolService } from './curiosity-random-sol.service';
 
 describe('TimerService', () => {
-  let service: TimerService;
+  let service: CuriousityRandomSolService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TimerService);
+    service = TestBed.inject(CuriousityRandomSolService);
   });
 
   it('should be created', () => {

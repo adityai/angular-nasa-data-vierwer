@@ -1,2 +1,8 @@
-<p>timer works!</p>
-<h3>{{ statusText }}</h3>
+<p>Random Curiosity Photo</p>
+<h3>Sol: {{ randomSol }}</h3>
+<div *ngIf="curiosityImageUrl">
+    <pre>
+        <p>Earth Date: {{ curiosityEarthDate }}</p>
+        <p><a href="{{ curiosityImageUrl }}"><img src="{{ curiosityImageUrl }}" width=300 /></a></p>
+    </pre>
+</div>

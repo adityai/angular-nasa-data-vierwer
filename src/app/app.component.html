@@ -1,18 +1,28 @@
 <div>
-  <app-timer></app-timer>
+    <app-timer></app-timer>
+</div>
+<div>
+    <hr>
 </div>
 <div>
     <app-curiosity-sol></app-curiosity-sol>
 </div>
-<table><tr><td>
-    <app-mars-rover-photos></app-mars-rover-photos>
-</td></tr>
-<tr><td>
-    <app-mars-rover-photos [inputCuriositySol]="2"></app-mars-rover-photos>
-</td></tr>
-<tr><td>
-    <app-mars-rover-photos [random]=true></app-mars-rover-photos>
-</td></tr>
+<table>
+    <tr>
+        <td>
+            <app-mars-rover-photos></app-mars-rover-photos>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <app-mars-rover-photos [inputCuriositySol]="2"></app-mars-rover-photos>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <app-mars-rover-photos [random]=true></app-mars-rover-photos>
+        </td>
+    </tr>
 </table>
 <div>
     <app-apod></app-apod>
