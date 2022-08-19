@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { CuriosityRandomSolService } from './curiosity-random-sol.service';
 
 describe('TimerService', () => {
-  let service: CuriousityRandomSolService;
+  let service: CuriosityRandomSolService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
