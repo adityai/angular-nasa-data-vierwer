@@ -3,7 +3,7 @@ import { Subscription, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { CuriosityRandomSolService } from 'src/app/curiosity-random-sol.service';
-import { MarsRoverPhotosService } from '../mars-rover-photos.service';
+// import { MarsRoverPhotosService } from '../mars-rover-photos.service';
 
 @Component({
   selector: 'app-timer',
@@ -17,17 +17,19 @@ export class TimerComponent implements OnInit, OnDestroy {
   public curiosityEarthDate: any;
 
 
-  constructor(private curiosityRandomSolService: CuriosityRandomSolService, private marsRoverPhotoService: MarsRoverPhotosService) { }
+  constructor(private curiosityRandomSolService: CuriosityRandomSolService
+//               , private marsRoverPhotoService: MarsRoverPhotosService
+             ) { }
 
   ngOnInit(): void {
     this.subscription = timer(0, 10000).pipe(
       switchMap(() => this.curiosityRandomSolService.getData())
     ).subscribe(result => this.randomSol = this.curiosityRandomSolService.getData());
-    this.marsRoverPhotoService.getCuriosityPhotoForSol(this.randomSol).subscribe(data => {
-      let jsonObject = JSON.parse(JSON.stringify(data));
-      this.curiosityImageUrl = jsonObject.photos[0].img_src;
-      this.curiosityEarthDate = jsonObject.photos[0].earth_date;
-    });
+//     this.marsRoverPhotoService.getCuriosityPhotoForSol(this.randomSol).subscribe(data => {
+//       let jsonObject = JSON.parse(JSON.stringify(data));
+//       this.curiosityImageUrl = jsonObject.photos[0].img_src;
+//       this.curiosityEarthDate = jsonObject.photos[0].earth_date;
+//     });
   }
 
   ngOnDestroy(): void {
