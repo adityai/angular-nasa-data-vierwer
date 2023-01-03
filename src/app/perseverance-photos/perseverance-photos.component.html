@@ -1,1 +1,6 @@
-<p>perseverance-photos works!</p>
+<h3>Earth Date: {{ earthDate }}</h3>
+<div *ngIf="imageUrl">
+    <pre>
+        <p><a href="{{ imageUrl }}"><img src="{{ imageUrl }}" width=300 /></a></p>
+    </pre>
+</div>
