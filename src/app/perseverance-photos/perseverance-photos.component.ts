@@ -17,9 +17,9 @@ export class PerseverancePhotosComponent implements OnInit {
     this.service.getPerseverancePhotoLatest().subscribe(data => {
       this.data = data;
       let jsonObject = JSON.parse(JSON.stringify(this.data));
-      this.imageUrl = jsonObject.photos[0].img_src;
-      this.earthDate = jsonObject.photos[0].earth_date;
-      console.log(this.earthDate);
+      this.imageUrl = jsonObject.latest_photos[10].img_src;
+      this.earthDate = jsonObject.latest_photos[10].earth_date;
+      console.log(jsonObject.latest_photos[10]);
     });
 
   }
