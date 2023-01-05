@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { PerseverancePhotosComponent } from './perseverance-photos.component';
 
 describe('PerseverancePhotosComponent', () => {
@@ -7,10 +7,14 @@ describe('PerseverancePhotosComponent', () => {
   let fixture: ComponentFixture<PerseverancePhotosComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ PerseverancePhotosComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule
+      ],
+      declarations: [
+        PerseverancePhotosComponent
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
