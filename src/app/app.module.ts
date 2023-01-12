@@ -10,6 +10,7 @@ import { ApodComponent } from './apod/apod.component';
 import { MarsRoverPhotosComponent } from './mars-rover-photos/mars-rover-photos.component';
 import { CuriositySolComponent } from './curiosity-sol/curiosity-sol.component';
 import { TimerComponent } from './timer/timer.component';
+import { PerseverancePhotosComponent } from './perseverance-photos/perseverance-photos.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TimerComponent } from './timer/timer.component';
     ApodComponent,
     MarsRoverPhotosComponent,
     CuriositySolComponent,
-    TimerComponent
+    TimerComponent,
+    PerseverancePhotosComponent
   ],
   imports: [
     BrowserModule,
