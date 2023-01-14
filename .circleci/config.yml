@@ -32,6 +32,8 @@ jobs:
       - run:
           name: Run OWASP Dependency Check
           command: npm run owasp
+      - store_artifacts:
+          path: dependency-check-reports
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
