@@ -1,40 +1,28 @@
-<!-- <div>
+<!-- Experimental to automatically switch to random curiosity photo -->
+<!-- 
+<div>
     <app-timer></app-timer>
-</div> -->
-<!-- <div>
-    <hr>
-</div> -->
+</div> 
+-->
 <!-- <div>
   <app-curiosity-sol></app-curiosity-sol>
 </div> -->
-<table>
+<table border="1">
+    <thead>
+        <th>Curiosity Today</th>
+        <th>Curiosity Sol 2</th>
+        <th>Curiosity Random Photo</th>
+        <th>Perseverance Camera</th>
+    </thead>
     <tr>
-        <td>
-            Curiosity Today
-        </td>
         <td>
             <app-mars-rover-photos></app-mars-rover-photos>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Curiosity Sol 2
         </td>
         <td>
             <app-mars-rover-photos [inputCuriositySol]="2"></app-mars-rover-photos>
         </td>
-    </tr>
-    <tr>
-        <td>
-            Curiosity Random Photo
-        </td>
         <td>
             <app-mars-rover-photos [random]=true></app-mars-rover-photos>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Perseverance Camera
         </td>
         <td>
             <app-perseverance-photos></app-perseverance-photos>
