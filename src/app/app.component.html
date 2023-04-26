@@ -1,36 +1,49 @@
-<div>
+<!-- <div>
     <app-timer></app-timer>
-</div>
-<div>
+</div> -->
+<!-- <div>
     <hr>
-</div>
-<div>
+</div> -->
+<!-- <div>
   <app-curiosity-sol></app-curiosity-sol>
-</div>
-<div>
-  <h2>Perseverance Camera</h2>
-  <app-perseverance-photos></app-perseverance-photos>
-</div>
+</div> -->
 <table>
     <tr>
+        <td>
+            Curiosity Today
+        </td>
         <td>
             <app-mars-rover-photos></app-mars-rover-photos>
         </td>
     </tr>
     <tr>
         <td>
+            Curiosity Sol 2
+        </td>
+        <td>
             <app-mars-rover-photos [inputCuriositySol]="2"></app-mars-rover-photos>
         </td>
     </tr>
     <tr>
         <td>
+            Curiosity Random Photo
+        </td>
+        <td>
             <app-mars-rover-photos [random]=true></app-mars-rover-photos>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Perseverance Camera
+        </td>
+        <td>
+            <app-perseverance-photos></app-perseverance-photos>
         </td>
     </tr>
 </table>
 <div>
     <app-apod></app-apod>
 </div>
-<div>
+<!-- <div>
     <app-insight-weather-data></app-insight-weather-data>
-</div>
+</div> -->
