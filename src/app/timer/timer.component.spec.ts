@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TimerComponent } from './timer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('TimerComponent', () => {
   let component: TimerComponent;
@@ -8,6 +9,7 @@ describe('TimerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [ TimerComponent ]
     })
     .compileComponents();
