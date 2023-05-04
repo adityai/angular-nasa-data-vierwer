@@ -1,6 +1,11 @@
-<h3>Earth Date: {{ earthDate }}</h3>
-<div *ngIf="imageUrl">
-    <pre>
-        <p><a href="{{ imageUrl }}"><img src="{{ imageUrl }}" width=300 /></a></p>
-    </pre>
-</div>
+<td *ngFor="let photo of latestPhotos">
+    <div>
+        <a href="{{ photo.img_src }}"><img src="{{ photo.img_src }}" width=300 /></a>
+    </div>
+    <div>
+        Id: {{ photo.id }}
+    </div>
+    <div>
+        {{ photo.camera.full_name }}
+    </div>
+</td>
