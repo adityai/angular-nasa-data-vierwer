@@ -10,6 +10,7 @@ export class PerseverancePhotosComponent implements OnInit {
   public data: any;
   public imageUrl: any;
   public earthDate: any;
+  public latestPhotos: any;
 
   constructor(private service: PerseverancePhotosService) { }
 
@@ -17,6 +18,7 @@ export class PerseverancePhotosComponent implements OnInit {
     this.service.getPerseverancePhotoLatest().subscribe(data => {
       this.data = data;
       let jsonObject = JSON.parse(JSON.stringify(this.data));
+      this.latestPhotos = jsonObject.latest_photos;
       this.imageUrl = jsonObject.latest_photos[10].img_src;
       this.earthDate = jsonObject.latest_photos[10].earth_date;
       console.log(jsonObject.latest_photos[10]);
