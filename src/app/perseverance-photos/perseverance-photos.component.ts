@@ -11,6 +11,7 @@ export class PerseverancePhotosComponent implements OnInit {
   public imageUrl: any;
   public earthDate: any;
   public latestPhotos: any;
+  public sol: any;
 
   constructor(private service: PerseverancePhotosService) { }
 
@@ -21,6 +22,7 @@ export class PerseverancePhotosComponent implements OnInit {
       this.latestPhotos = jsonObject.latest_photos;
       this.imageUrl = jsonObject.latest_photos[10].img_src;
       this.earthDate = jsonObject.latest_photos[10].earth_date;
+      this.sol = jsonObject.latest_photos[10].sol;
       console.log(jsonObject.latest_photos[10]);
     });
 
