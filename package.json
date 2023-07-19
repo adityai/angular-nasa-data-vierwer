@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test --code-coverage --no-watch --browsers ChromeHeadless",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "owasp": "owasp-dependency-check --project \"Angular NASA Data Viewer\""
   },
   "private": true,
   "dependencies": {
@@ -38,6 +39,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "owasp-dependency-check": "0.0.21",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
