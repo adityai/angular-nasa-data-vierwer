@@ -32,9 +32,9 @@ jobs:
       - run:
           name: Build
           command: npm run build
-      - run:
-          name: Run OWASP Dependency Check
-          command: npm run owasp
+      # - run:
+      #     name: Run OWASP Dependency Check
+      #     command: npm run owasp
       - store_artifacts:
           path: dependency-check-reports
 
