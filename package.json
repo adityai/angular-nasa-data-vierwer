@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@alpacahq/alpaca-trade-api": "^3.0.1",
     "@angular/animations": "^16.1.5",
     "@angular/common": "^16.1.5",
     "@angular/compiler": "^16.1.5",

@@ -11,6 +11,7 @@ import { MarsRoverPhotosComponent } from './mars-rover-photos/mars-rover-photos.
 import { CuriositySolComponent } from './curiosity-sol/curiosity-sol.component';
 import { TimerComponent } from './timer/timer.component';
 import { PerseverancePhotosComponent } from './perseverance-photos/perseverance-photos.component';
+import { YfiComponent } from './yfi/yfi.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PerseverancePhotosComponent } from './perseverance-photos/perseverance-
     MarsRoverPhotosComponent,
     CuriositySolComponent,
     TimerComponent,
-    PerseverancePhotosComponent
+    PerseverancePhotosComponent,
+    YfiComponent
   ],
   imports: [
     BrowserModule,
